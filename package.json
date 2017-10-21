@@ -33,26 +33,32 @@
     "ava": "^0.22.0",
     "d3-selection": "^1.1.0",
     "jsdom": "^11.3.0",
+    "nyc": "^11.2.1",
     "rollup": "^0.50.0",
     "xo": "^0.18.2"
   },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "xo src/**/*.js && xo tests/**/*.js && tape tests/**/*.js | faucet",
+    "test": "xo src/**/*.js && xo tests/**/*.js && ava",
     "pretest": "rollup -c"
   },
   "files": [
     "dist"
   ],
   "ava": {
-		"files": [
-			"tests/**/*.js"
-		],
-		"concurrency": 5,
-		"failFast": true,
-		"failWithoutAssertions": false,
-		"tap": false,
-		"powerAssert": false
-	}
+    "files": [
+      "tests/**/*.js"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "tap": false,
+    "powerAssert": false
+  },
+  "nyc": {
+    "exclude": [
+      "tests/**/*.js"
+    ]
+  }
 }

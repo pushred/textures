@@ -1,5 +1,4 @@
-const jsdom = require('jsdom');
+import jsdom from './jsdom';
 
-module.exports = function (html) {
-	return (new jsdom.JSDOM(html)).window.document;
-};
+export default html =>
+	(new jsdom.JSDOM(html)).window.document;

@@ -30,11 +30,10 @@
   "homepage": "https://github.com/riccardoscalco/textures",
   "dependencies": {},
   "devDependencies": {
+    "ava": "^0.22.0",
     "d3-selection": "^1.1.0",
-    "faucet": "^0.0.1",
     "jsdom": "^11.3.0",
     "rollup": "^0.50.0",
-    "tape": "^4.8.0",
     "xo": "^0.18.2"
   },
   "scripts": {
@@ -45,5 +44,15 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "ava": {
+		"files": [
+			"tests/**/*.js"
+		],
+		"concurrency": 5,
+		"failFast": true,
+		"failWithoutAssertions": false,
+		"tap": false,
+		"powerAssert": false
+	}
 }

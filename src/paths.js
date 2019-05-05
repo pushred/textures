@@ -11,6 +11,7 @@ export default () => {
 	let id = rand();
 	let fill = 'transparent';
 	let shapeRendering = 'auto';
+	let strokeLinecap = 'square';
 
 	const path = _ => {
 		const s = size;
@@ -60,7 +61,7 @@ export default () => {
 				.attr('fill', fill)
 				.attr('stroke', stroke)
 				.attr('stroke-width', strokeWidth)
-				.attr('stroke-linecap', 'square')
+				.attr('stroke-linecap', strokeLinecap)
 				.attr('shape-rendering', shapeRendering);
 	};
 
@@ -127,6 +128,11 @@ export default () => {
 
 	$.stroke = function (_) {
 		stroke = _;
+		return $;
+	};
+
+	$.strokeLinecap = function (_) {
+		strokeLinecap = _;
 		return $;
 	};
 
